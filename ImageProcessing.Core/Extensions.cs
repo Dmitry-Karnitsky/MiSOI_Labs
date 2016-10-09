@@ -155,6 +155,27 @@ namespace ImageProcessing.Core
             return pixel;
         }
 
+        public static byte GetBrightness(this PixelColor pixel)
+        {
+            var num1 = pixel.R / (double)255;
+            var num2 = pixel.G / (float)255;
+            var num3 = pixel.B / (float)255;
+
+            var num4 = (float)num1;
+            var num5 = (float)num1;
+
+            if (num2 > (double)num4)
+                num4 = num2;
+            if (num3 > (double)num4)
+                num4 = num3;
+            if (num2 < (double)num5)
+                num5 = num2;
+            if (num3 < (double)num5)
+                num5 = num3;
+
+            return Convert.ToByte(Math.Round((float)((num4 + (double)num5) / 2.0) * 255));
+        }
+
         public static PixelColor ForEachColor(this PixelColor pixel, Func<int, int> func)
         {
             pixel.B = func(pixel.B);
@@ -188,12 +209,15 @@ namespace ImageProcessing.Core
             c.B = ptr[0];
             c.G = ptr[1];
             c.R = ptr[2];
+            c.IsChanged = false;
 
             return c;
         }
 
         private static unsafe void FillBitmapColor(this PixelColor c, byte* ptr)
         {
+            if (!c.IsChanged) return;
+
             ptr[0] = (byte)c.B;
             ptr[1] = (byte)c.G;
             ptr[2] = (byte)c.R;

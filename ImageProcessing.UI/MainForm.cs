@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using ImageProcessing.Core;
@@ -8,8 +9,6 @@ namespace ImageProcessing.UI
 {
     public partial class MainForm : Form
     {
-        private const int MenuStripHeight = 24;
-
         public Bitmap OriginalImage { get; set; }
 
         public MainForm()
@@ -18,7 +17,7 @@ namespace ImageProcessing.UI
             IsMdiContainer = true;
         }
 
-        private void OnNegativeImageMenuItemClick(object sender, System.EventArgs e)
+        private void OnNegativeImageMenuItemClick(object sender, EventArgs e)
         {
             if (!CanContinueProcessing(Resources.NegativeImage))
             {
@@ -29,7 +28,7 @@ namespace ImageProcessing.UI
                 .Show();
         }
 
-        private void OnSobelFilterMenuItemClick(object sender, System.EventArgs e)
+        private void OnSobelFilterMenuItemClick(object sender, EventArgs e)
         {
             if (!CanContinueProcessing(Resources.SobelEdgeDetection))
             {
@@ -40,18 +39,18 @@ namespace ImageProcessing.UI
                 .Show();
         }
 
-        private void OnGrayscaleImageMenuItemClick(object sender, System.EventArgs e)
+        private void OnGrayscaleImageMenuItemClick(object sender, EventArgs e)
         {
             if (!CanContinueProcessing(Resources.Grayscale))
             {
                 return;
             }
 
-            CreateWindow(Resources.SobelEdgeDetection, InitializeProcessor(new GrayscaleImageProcessor()))
+            CreateWindow(Resources.Grayscale, InitializeProcessor(new GrayscaleImageProcessor()))
                 .Show();
         }
 
-        private void OnFileOpenMenuItemClick(object sender, System.EventArgs e)
+        private void OnFileOpenMenuItemClick(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog
             {
@@ -79,7 +78,7 @@ namespace ImageProcessing.UI
                 ImageProcessor = processor,
                 Text = handle,
                 Width = OriginalImage.Width,
-                Height = OriginalImage.Height + MenuStripHeight
+                Height = OriginalImage.Height + ImageForm.OffsetToImageFromTop
             };
         }
 

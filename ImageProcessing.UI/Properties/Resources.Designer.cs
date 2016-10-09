@@ -70,6 +70,15 @@ namespace ImageProcessing.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} - Diagram.
+        /// </summary>
+        internal static string Diagram {
+            get {
+                return ResourceManager.GetString("Diagram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bitmap files (*.bmp)|*.bmp|Jpeg files (*.jpg)|*.jpg|All valid files (*.bmp/*.jpg)|*.bmp/*.jpg.
         /// </summary>
         internal static string FileTypesFilter {

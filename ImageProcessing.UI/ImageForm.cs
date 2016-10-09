@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using ImageProcessing.Core;
 using ImageProcessing.UI.Properties;
@@ -7,22 +8,25 @@ namespace ImageProcessing.UI
 {
     public partial class ImageForm : Form
     {
-        private const int DefaultBrightnessValue = 255;
+        public const int OffsetToImageFromTop = 42;
 
         private ImageProcessor _imageProcessor;
 
         public ImageForm()
         {
             InitializeComponent();
-            menuStrip1.Visible = false;
-            menuStrip1.AllowMerge = false;
-            BrightnessTextBox.Text = @"0";
-            BrightnessTrackBar.Value = DefaultBrightnessValue;
-            BrightnessTrackBar.ValueChanged += OnBrightnessTrackBarValueChanged;
-            BrightnessTrackBar.TickFrequency = 30;
-            BrightnessTrackBar.LargeChange = 10;
-            BrightnessTrackBar.Minimum = 0;
-            BrightnessTrackBar.Maximum = 510;
+            MaximizeBox = false;
+
+            menuStrip.Visible = false;
+            menuStrip.AllowMerge = false;
+            brightnessTextBox.Text = @"0";
+            brightnessTrackBar.Value = 0;
+            brightnessTrackBar.ValueChanged += OnBrightnessTrackBarValueChanged;
+            brightnessTrackBar.TickFrequency = 30;
+            brightnessTrackBar.LargeChange = 10;
+            brightnessTrackBar.Minimum = -255;
+            brightnessTrackBar.Maximum = 255;
+            imageBox.Top = OffsetToImageFromTop;
         }
 
         public Image Image
@@ -40,11 +44,11 @@ namespace ImageProcessing.UI
             set
             {
                 _imageProcessor = value;
-                menuStrip1.Visible = true;
+                menuStrip.Visible = true;
             }
         }
 
-        private void FileSaveMenuItem_Click(object sender, System.EventArgs e)
+        private void FileSaveMenuItem_Click(object sender, EventArgs e)
         {
             var saveFileDialog = new SaveFileDialog
             {
@@ -60,20 +64,32 @@ namespace ImageProcessing.UI
             }
         }
 
-        private async void ImageForm_Load(object sender, System.EventArgs e)
+        private async void ImageForm_Load(object sender, EventArgs e)
         {
-            if (ImageProcessor != null)
-            {
-                Image = await ImageProcessor.Process();
-            }
+            if (ImageProcessor == null) return;
+
+            Image = await ImageProcessor.Process();
         }
 
-        private async void OnBrightnessTrackBarValueChanged(object sender, System.EventArgs e)
+        private async void OnBrightnessTrackBarValueChanged(object sender, EventArgs e)
         {
-            var delta = BrightnessTrackBar.Value - DefaultBrightnessValue;
+            brightnessTextBox.Text = brightnessTrackBar.Value.ToString();
+            Image = await ImageProcessor.AdjustBrightness(brightnessTrackBar.Value);
+        }
 
-            BrightnessTextBox.Text = delta.ToString();
-            Image = await ImageProcessor.AdjustBrightness(delta);
+        private async void OnDiagramMenuItemClick(object sender, EventArgs e)
+        {
+            var diagramForm = new DigramForm
+            {
+                Text = string.Format(Resources.Diagram, Text),
+                Width = 600,
+                Height = 600,
+                MdiParent = MdiParent
+            };
+
+            diagramForm.Show();
+
+            diagramForm.Points = await ImageProcessor.GetBrightnessHistogramValues();
         }
     }
 }

@@ -138,4 +138,7 @@
   <data name="Grayscale" xml:space="preserve">
     <value>Grayscale Image</value>
   </data>
+  <data name="Diagram" xml:space="preserve">
+    <value>{0} - Diagram</value>
+  </data>
 </root>

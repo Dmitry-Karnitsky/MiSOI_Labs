@@ -1,11 +1,14 @@
-﻿namespace ImageProcessing.UI
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace ImageProcessing.UI
 {
     partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -95,11 +98,11 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem FileOpenMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem NegativeImageMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem SobelFilterMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem GrayscaleImageMenuItem;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem FileOpenMenuItem;
+        private ToolStripMenuItem NegativeImageMenuItem;
+        private ToolStripMenuItem SobelFilterMenuItem;
+        private ToolStripMenuItem GrayscaleImageMenuItem;
     }
 }
 
