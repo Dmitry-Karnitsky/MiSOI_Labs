@@ -336,7 +336,7 @@ namespace ImageProcessing.Core
             {
                 foreach (var point in points)
                 {
-                    graphics.DrawRectangle(Pens.GreenYellow, point.X - 5, point.Y - 5, 10, 10);
+                    graphics.DrawRectangle(Pens.DarkBlue, point.X - 5, point.Y - 5, 10, 10);
                 }
             }
 

@@ -82,14 +82,16 @@ namespace ImageProcessing.UI
 
         private Form CreateWindow(string handle, ImageProcessor processor, bool brightnessToolsVisible = false)
         {
+            var aspect = 1.0 * OriginalImage.Height / OriginalImage.Width;
+
             return new ImageForm
             {
                 MdiParent = this,
                 WindowState = FormWindowState.Normal,
                 ImageProcessor = processor,
                 Text = handle,
-                Width = OriginalImage.Width,
-                Height = OriginalImage.Height + ImageForm.OffsetToImageFromTop,
+                Width = OriginalImage.Width > 800 ? 800 : OriginalImage.Width,
+                Height = OriginalImage.Width > 800 ? (int)(800 * aspect) : OriginalImage.Height + ImageForm.OffsetToImageFromTop,
                 BrightnessChangeToolsVisible = brightnessToolsVisible
             };
         }
