@@ -50,6 +50,17 @@ namespace ImageProcessing.UI
                 .Show();
         }
 
+        private void OnForstnerDetectorMenuItemClick(object sender, EventArgs e)
+        {
+            if (!CanContinueProcessing(Resources.ForstnerDetector))
+            {
+                return;
+            }
+
+            CreateWindow(Resources.ForstnerDetector, InitializeProcessor(new ForstnerDetectorProcessor()))
+                .Show();
+        }
+
         private void OnFileOpenMenuItemClick(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog

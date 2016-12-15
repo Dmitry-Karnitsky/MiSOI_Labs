@@ -88,6 +88,15 @@ namespace ImageProcessing.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Forstner Detector.
+        /// </summary>
+        internal static string ForstnerDetector {
+            get {
+                return ResourceManager.GetString("ForstnerDetector", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Grayscale Image.
         /// </summary>
         internal static string Grayscale {

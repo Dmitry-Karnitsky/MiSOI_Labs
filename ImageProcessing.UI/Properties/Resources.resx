@@ -141,4 +141,7 @@
   <data name="Diagram" xml:space="preserve">
     <value>{0} - Diagram</value>
   </data>
+  <data name="ForstnerDetector" xml:space="preserve">
+    <value>Forstner Detector</value>
+  </data>
 </root>

@@ -36,6 +36,7 @@ namespace ImageProcessing.UI
             this.NegativeImageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SobelFilterMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GrayscaleImageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.forstnerDetectorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,8 @@ namespace ImageProcessing.UI
             this.FileOpenMenuItem,
             this.NegativeImageMenuItem,
             this.SobelFilterMenuItem,
-            this.GrayscaleImageMenuItem});
+            this.GrayscaleImageMenuItem,
+            this.forstnerDetectorToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1095, 24);
@@ -80,6 +82,13 @@ namespace ImageProcessing.UI
             this.GrayscaleImageMenuItem.Text = "Grayscale";
             this.GrayscaleImageMenuItem.Click += new System.EventHandler(this.OnGrayscaleImageMenuItemClick);
             // 
+            // forstnerDetectorToolStripMenuItem
+            // 
+            this.forstnerDetectorToolStripMenuItem.Name = "forstnerDetectorToolStripMenuItem";
+            this.forstnerDetectorToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
+            this.forstnerDetectorToolStripMenuItem.Text = "Forstner Detector";
+            this.forstnerDetectorToolStripMenuItem.Click += new System.EventHandler(this.OnForstnerDetectorMenuItemClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -103,6 +112,7 @@ namespace ImageProcessing.UI
         private ToolStripMenuItem NegativeImageMenuItem;
         private ToolStripMenuItem SobelFilterMenuItem;
         private ToolStripMenuItem GrayscaleImageMenuItem;
+        private ToolStripMenuItem forstnerDetectorToolStripMenuItem;
     }
 }
 

@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Entities\PixelColor.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="ForstnerDetectorProcessor.cs" />
     <Compile Include="GrayscaleImageProcessor.cs" />
     <Compile Include="ImageProcessor.cs" />
     <Compile Include="NegativeImageProcessor.cs" />
