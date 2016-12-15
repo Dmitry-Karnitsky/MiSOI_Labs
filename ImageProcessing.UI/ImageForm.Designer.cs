@@ -55,11 +55,11 @@ namespace ImageProcessing.UI
             this.imageBox.Location = new System.Drawing.Point(3, 42);
             this.imageBox.Name = "imageBox";
             this.imageBox.Size = new System.Drawing.Size(583, 494);
-            this.imageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imageBox.TabIndex = 0;
             this.imageBox.TabStop = false;
             // 
-            // menuStrip1
+            // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileSaveMenuItem,
@@ -106,9 +106,9 @@ namespace ImageProcessing.UI
             this.panel2.Size = new System.Drawing.Size(586, 36);
             this.panel2.TabIndex = 1;
             // 
-            // BrightnessTextBox
+            // brightnessTextBox
             // 
-            this.brightnessTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.brightnessTextBox.BackColor = System.Drawing.Color.White;
             this.brightnessTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.brightnessTextBox.Location = new System.Drawing.Point(100, 10);
             this.brightnessTextBox.Name = "brightnessTextBox";
@@ -125,7 +125,7 @@ namespace ImageProcessing.UI
             this.BrightnessLabel.TabIndex = 1;
             this.BrightnessLabel.Text = "Brightness Adjust:";
             // 
-            // BrightnessTrackBar
+            // brightnessTrackBar
             // 
             this.brightnessTrackBar.Location = new System.Drawing.Point(134, 0);
             this.brightnessTrackBar.Maximum = 255;

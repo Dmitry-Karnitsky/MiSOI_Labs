@@ -27,12 +27,20 @@ namespace ImageProcessing.UI
             brightnessTrackBar.Minimum = -255;
             brightnessTrackBar.Maximum = 255;
             imageBox.Top = OffsetToImageFromTop;
+
+            panel1.BackColor = Color.White;
+            imageBox.Image = Image.FromFile("Loading_icon.gif");
+            imageBox.SizeMode = PictureBoxSizeMode.CenterImage;
         }
 
         public Image Image
         {
             get { return imageBox.Image; }
-            set { imageBox.Image = value; }
+            set
+            {
+                imageBox.Image = value;
+                imageBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
 
         public ImageProcessor ImageProcessor
@@ -45,6 +53,14 @@ namespace ImageProcessing.UI
             {
                 _imageProcessor = value;
                 menuStrip.Visible = true;
+            }
+        }
+
+        public bool BrightnessChangeToolsVisible
+        {
+            set
+            {
+                panel2.Visible = value;
             }
         }
 
@@ -69,6 +85,7 @@ namespace ImageProcessing.UI
             if (ImageProcessor == null) return;
 
             Image = await ImageProcessor.Process();
+
         }
 
         private async void OnBrightnessTrackBarValueChanged(object sender, EventArgs e)

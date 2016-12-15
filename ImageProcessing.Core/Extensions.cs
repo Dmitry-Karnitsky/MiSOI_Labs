@@ -307,7 +307,7 @@ namespace ImageProcessing.Core
                     {
                         float currentValue = map[y, x];
 
-                        for (int i = -windowSize; (Math.Abs(currentValue) > 0.001) && (i <= windowSize); i++)
+                        for (int i = -windowSize; (Math.Abs(currentValue) > 1) && (i <= windowSize); i++)
                         {
                             for (int j = -windowSize; j <= windowSize; j++)
                             {
@@ -319,7 +319,7 @@ namespace ImageProcessing.Core
                             }
                         }
 
-                        if (Math.Abs(currentValue) > 0.001)
+                        if (Math.Abs(currentValue) > 1)
                         {
                             cornersList.Add(new Point(x, y));
                         }
@@ -336,7 +336,7 @@ namespace ImageProcessing.Core
             {
                 foreach (var point in points)
                 {
-                    graphics.DrawRectangle(Pens.Red, point.X - 5, point.Y - 5, 10, 10);
+                    graphics.DrawRectangle(Pens.GreenYellow, point.X - 5, point.Y - 5, 10, 10);
                 }
             }
 
@@ -456,7 +456,6 @@ namespace ImageProcessing.Core
 
         private static float[] Kernel(double sigmaSquared, int size)
         {
-            // check for evem size and for out of range
             if (((size % 2) == 0) || (size < 3))
                 throw new ArgumentOutOfRangeException("size", "Kernel size must be odd and higher than 2.");
 

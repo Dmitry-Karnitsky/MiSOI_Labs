@@ -75,12 +75,12 @@ namespace ImageProcessing.UI
             {
                 OriginalImage = (Bitmap)Image.FromFile(openFileDialog.FileName);
 
-                CreateWindow(Resources.OriginalImageTitle, InitializeProcessor(new ImageProcessor()))
+                CreateWindow(Resources.OriginalImageTitle, InitializeProcessor(new ImageProcessor()), brightnessToolsVisible: true)
                     .Show();
             }
         }
 
-        private Form CreateWindow(string handle, ImageProcessor processor)
+        private Form CreateWindow(string handle, ImageProcessor processor, bool brightnessToolsVisible = false)
         {
             return new ImageForm
             {
@@ -89,7 +89,8 @@ namespace ImageProcessing.UI
                 ImageProcessor = processor,
                 Text = handle,
                 Width = OriginalImage.Width,
-                Height = OriginalImage.Height + ImageForm.OffsetToImageFromTop
+                Height = OriginalImage.Height + ImageForm.OffsetToImageFromTop,
+                BrightnessChangeToolsVisible = brightnessToolsVisible
             };
         }
 
