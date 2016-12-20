@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProcessing.UI", "Image
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProcessing.Core", "ImageProcessing.Core\ImageProcessing.Core.csproj", "{A8ED6AFC-7C84-44CF-A831-C3D4746ED2E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProcessing.NeuralNetwork", "ImageProcessing.NeuralNetwork\ImageProcessing.NeuralNetwork.csproj", "{C2005144-4F68-4919-AB0A-14FD3BD8BD1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProcessing.NeuralNetwork.Testing", "ImageProcessing.NeuralNetwork.Teaching\ImageProcessing.NeuralNetwork.Testing.csproj", "{7050830D-5C8A-4CF0-982B-81D74B4BF010}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{A8ED6AFC-7C84-44CF-A831-C3D4746ED2E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8ED6AFC-7C84-44CF-A831-C3D4746ED2E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8ED6AFC-7C84-44CF-A831-C3D4746ED2E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2005144-4F68-4919-AB0A-14FD3BD8BD1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2005144-4F68-4919-AB0A-14FD3BD8BD1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2005144-4F68-4919-AB0A-14FD3BD8BD1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2005144-4F68-4919-AB0A-14FD3BD8BD1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7050830D-5C8A-4CF0-982B-81D74B4BF010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7050830D-5C8A-4CF0-982B-81D74B4BF010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7050830D-5C8A-4CF0-982B-81D74B4BF010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7050830D-5C8A-4CF0-982B-81D74B4BF010}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
