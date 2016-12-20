@@ -111,6 +111,7 @@ namespace ImageProcessing.UI
 
         private void teachNetworkToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            new UtilsTest().PrepareTestFiles();
             new TrainingTest().TrainNetwork();
         }
     }

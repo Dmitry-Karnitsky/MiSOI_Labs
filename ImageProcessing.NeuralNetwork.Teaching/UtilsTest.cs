@@ -8,10 +8,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ImageProcessing.NeuralNetwork.Teaching
 {
-    [TestClass]
     public class UtilsTest
     {
-       [TestMethod]
         public void PrepareTestFiles()
         {
             int magicNumber;
@@ -21,7 +19,7 @@ namespace ImageProcessing.NeuralNetwork.Teaching
 
             byte[] intBuffer = new byte[4];
 
-            using (FileStream fs = File.OpenRead("../../Resources/train-images.idx3-ubyte"))
+            using (FileStream fs = File.OpenRead("Resources/train-images.idx3-ubyte"))
             {
                 fs.Read(intBuffer, 0, 4);
                 intBuffer = intBuffer.Reverse().ToArray();
@@ -51,12 +49,12 @@ namespace ImageProcessing.NeuralNetwork.Teaching
                         IntPtr ptr = bmpData.Scan0;
                         Marshal.Copy(imageBufferBytes, 0, ptr, imageBufferBytes.Length);
                         bitmap.UnlockBits(bmpData);
-                        if (File.Exists($"../../Resources/Images/{i}.bmp"))
+                        if (File.Exists($"Resources/Images/{i}.bmp"))
                         {
-                            File.Delete($"../../Resources/Images/{i}.bmp");
+                            File.Delete($"Resources/Images/{i}.bmp");
                         }
 
-                        bitmap.Save($"../../Resources/Images/{i}.bmp");
+                        bitmap.Save($"Resources/Images/{i}.bmp");
                     }
                 }
             }
