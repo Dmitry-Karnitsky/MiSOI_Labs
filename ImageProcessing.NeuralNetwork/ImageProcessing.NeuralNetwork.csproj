@@ -7,8 +7,8 @@
     <ProjectGuid>{C2005144-4F68-4919-AB0A-14FD3BD8BD1B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Levshits.NeuralNetwork</RootNamespace>
-    <AssemblyName>Levshits.NeuralNetwork</AssemblyName>
+    <RootNamespace>ImageProcessing.NeuralNetwork</RootNamespace>
+    <AssemblyName>ImageProcessing.NeuralNetwork</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

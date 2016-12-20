@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Levshits.NeuralNetwork
+namespace ImageProcessing.NeuralNetwork
 {
     [Serializable]
     public class Synapse

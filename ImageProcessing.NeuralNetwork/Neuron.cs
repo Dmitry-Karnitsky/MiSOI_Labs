@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Levshits.NeuralNetwork
+namespace ImageProcessing.NeuralNetwork
 {
     [Serializable]
     public class Neuron

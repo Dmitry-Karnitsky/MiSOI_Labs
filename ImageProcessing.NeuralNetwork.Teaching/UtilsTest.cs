@@ -4,10 +4,9 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using Levshits.NeuralNetwork.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Levshits.NeuralNetwork.Testing
+namespace ImageProcessing.NeuralNetwork.Teaching
 {
     [TestClass]
     public class UtilsTest

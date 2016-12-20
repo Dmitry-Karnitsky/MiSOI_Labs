@@ -1,8 +1,6 @@
-﻿using System.Diagnostics;
-using System.IO;
-using Newtonsoft.Json;
+﻿using System.IO;
 
-namespace Levshits.NeuralNetwork.Utils
+namespace ImageProcessing.NeuralNetwork.Utils
 {
     public static class NeuralNetworkUtils
     {

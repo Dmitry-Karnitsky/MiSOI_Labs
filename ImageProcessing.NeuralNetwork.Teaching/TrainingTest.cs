@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Levshits.NeuralNetwork.Utils;
+using ImageProcessing.NeuralNetwork.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Levshits.NeuralNetwork.Testing
+namespace ImageProcessing.NeuralNetwork.Teaching
 {
     [TestClass]
     public class TrainingTest
