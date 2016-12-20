@@ -7,16 +7,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ImageProcessing.NeuralNetwork.Teaching
 {
-    [TestClass]
     public class TrainingTest
     {
         private const int NumInputs = 128;
         private const int NumHiddenPerLayer = 10;
         private const int NumHiddenLayers = 1;
         private const int NumOutputs = 10;
-        private const string NetworkJsonPath = @"../../Resources/network.dat";
+        private const string NetworkJsonPath = @"Resources/network.dat";
 
-        [TestMethod]
         public void TrainNetwork()
         {
             var network = CreateNetwork();
@@ -70,7 +68,7 @@ namespace ImageProcessing.NeuralNetwork.Teaching
 
             byte[] intBuffer = new byte[4];
 
-            using (FileStream fs = File.OpenRead("../../Resources/train-images.idx3-ubyte"))
+            using (FileStream fs = File.OpenRead("Resources/train-images.idx3-ubyte"))
             {
                 fs.Read(intBuffer, 0, 4);
                 intBuffer = intBuffer.Reverse().ToArray();

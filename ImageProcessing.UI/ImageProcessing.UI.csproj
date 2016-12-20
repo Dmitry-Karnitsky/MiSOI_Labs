@@ -104,6 +104,14 @@
       <Project>{A8ED6AFC-7C84-44CF-A831-C3D4746ED2E8}</Project>
       <Name>ImageProcessing.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ImageProcessing.NeuralNetwork.Teaching\ImageProcessing.NeuralNetwork.Testing.csproj">
+      <Project>{7050830d-5c8a-4cf0-982b-81d74b4bf010}</Project>
+      <Name>ImageProcessing.NeuralNetwork.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImageProcessing.NeuralNetwork\ImageProcessing.NeuralNetwork.csproj">
+      <Project>{c2005144-4f68-4919-ab0a-14fd3bd8bd1b}</Project>
+      <Name>ImageProcessing.NeuralNetwork</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="300px-Valve_original_%281%29.PNG">

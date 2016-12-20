@@ -59,9 +59,15 @@
     <Compile Include="UtilsTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\network.dat" />
-    <None Include="Resources\network.json" />
-    <None Include="Resources\train-images.idx3-ubyte" />
+    <None Include="Resources\network.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\network.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\train-images.idx3-ubyte">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ImageProcessing.NeuralNetwork\ImageProcessing.NeuralNetwork.csproj">

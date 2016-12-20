@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using ImageProcessing.Core;
 using ImageProcessing.UI.Properties;
+using ImageProcessing.NeuralNetwork.Teaching;
 
 namespace ImageProcessing.UI
 {
@@ -106,6 +107,11 @@ namespace ImageProcessing.UI
         {
             processor.OriginalImage = (Bitmap)OriginalImage.Clone();
             return processor;
+        }
+
+        private void teachNetworkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new TrainingTest().TrainNetwork();
         }
     }
 }

@@ -37,6 +37,7 @@ namespace ImageProcessing.UI
             this.SobelFilterMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GrayscaleImageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.forstnerDetectorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.teachNetworkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,8 @@ namespace ImageProcessing.UI
             this.NegativeImageMenuItem,
             this.SobelFilterMenuItem,
             this.GrayscaleImageMenuItem,
-            this.forstnerDetectorToolStripMenuItem});
+            this.forstnerDetectorToolStripMenuItem,
+            this.teachNetworkToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1095, 24);
@@ -89,6 +91,13 @@ namespace ImageProcessing.UI
             this.forstnerDetectorToolStripMenuItem.Text = "Forstner Detector";
             this.forstnerDetectorToolStripMenuItem.Click += new System.EventHandler(this.OnForstnerDetectorMenuItemClick);
             // 
+            // teachNetworkToolStripMenuItem
+            // 
+            this.teachNetworkToolStripMenuItem.Name = "teachNetworkToolStripMenuItem";
+            this.teachNetworkToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.teachNetworkToolStripMenuItem.Text = "Teach Network";
+            this.teachNetworkToolStripMenuItem.Click += new System.EventHandler(this.teachNetworkToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -113,6 +122,7 @@ namespace ImageProcessing.UI
         private ToolStripMenuItem SobelFilterMenuItem;
         private ToolStripMenuItem GrayscaleImageMenuItem;
         private ToolStripMenuItem forstnerDetectorToolStripMenuItem;
+        private ToolStripMenuItem teachNetworkToolStripMenuItem;
     }
 }
 
